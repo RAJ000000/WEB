@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div id='pane-title' style='height:50px; background-color:HoneyDew'>
+        <h1 style='text-align:center'>List All Questions</h1>
+    </div>
+    <div id='pane-main' style=''>
+        <button id='list-all-questions'>List All Questions</button>
+        <br>
+        <br>
+        <div id='pane-result'>Result here!</div>
+    </div>
+</body>
+
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+
+<script>
+    document.getElementById('list-all-questions').addEventListener('click', list_all_questions);  // When the above button is clicked,
+    
+    function list_all_questions() {
+        get_all_questions();
+    }
+    
+    function get_all_questions() {
+        $.get("//cs.tru.ca/~mlee/comp3540/Winter2023/9. Seminars/w2_list_all_questions.php", function(data) {
+            data = JSON.parse(data);
+            display_all_questions(data);  // data is an array of objects.
+        });
+    }
+    
+    // You need to complete the next 4 functions, after you complete Exercise 2.
+    
+    function display_all_questions(data) {
+        let str = construct_table(data);  // construcnt <table> code
+        document.getElementById('pane-result').innerHTML = str;  // display str to <div> of id='pane-result'
+    }
+    
+
+//construct table using 2 other funcs
+    function construct_table(cells) {
+		let str = '<table>'
+		str += header_cells(cells[0]);
+		for  (let p in cells) {
+			str += data_cells(cells[p]);
+		}
+                str += '</table>'
+		return str;
+}
+//heading
+    function header_cells(row) {
+        let str = '<tr>';
+
+        for(let p in row) {
+          str += '<th>' + p + '</th>';        
+        }
+        str += '</tr>';
+        return str;
+    }
+//fill data cells
+    function data_cells(row) {
+        let str = '<tr>';
+        for(let p in row) {
+          str += '<td>' + row[p] + '</td>';        
+}
+        str += '</tr>';
+        return str;
+    
+}
+    
+
+</script>

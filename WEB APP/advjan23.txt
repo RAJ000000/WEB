@@ -1,0 +1,144 @@
+<style>
+    #e1-layout-main {
+        background-color: lightGrey;
+        border: 10px solid black;
+        width: 100%;
+        height:100%
+    }
+</style>
+<div style='position:relative; height:500px'>  <!-- It might be considered as the view port. -->
+    <div id='e1-layout-main'>
+    </div>
+</div>
+                            
+
+<style>
+    #e2-layout-main {
+        width:100%;
+        height:400px;
+        background-color:LightGrey;
+        position:relative;
+    }
+    #e2-layout-left {
+        position:absolute;
+        width:50%;
+        height:100%;
+        top:0;
+        left:0;
+        background-color:Cyan;
+    }
+    #e2-layout-right {
+        position:absolute;
+        width:50%;
+        height:100%;
+        top:0;
+        left:50%;
+        background-color:LightGrey;
+    }
+</style>
+<div style='position:relative; height:500px'>
+    <div id='e2-layout-main'>
+        <div id='e2-layout-left'>
+        </div>
+        <div id='e2-layout-right'>
+        </div>
+    </div>
+</div>
+                            
+
+<style>
+    #e3-layout-left {
+        position:relative;
+        width:50%; height:400px;
+        background-color:Cyan;
+    }
+    #e3-content-left{
+top:100px;
+margin:10px;
+}
+</style>
+<div id='e3-layout-left'>
+    <div id='e3-content-left'>
+        Let's not become weary in doing good,<br>
+        for at the proper time we will see a great outcome<br>
+        if we do not give up.
+    </div>
+</div>
+                            
+
+
+<style>
+     #ddm { 
+        list-style:none;
+        width:140px; 
+        text-align:center;
+         background-color:White;
+        position:relative; left:50px;
+    }
+    #ddm > li:hover > ul {
+       
+        display:block;
+    }
+    #ddm > li > ul { 
+        list-style:none;
+        padding:0; margin:0;
+        display:none; width:100px;
+        border:1px solid black; background-color:White;
+        position:absolute; top:100%; left:0;
+    }
+    #ddm > li > ul > li:hover {
+        background-color:Grey;
+    }
+</style>
+<div id='ddm'>
+    <li style='width: 50px;'><img src='menu_icon.png' width='50px' height='50px'></img>
+        <ul>
+            <li id = 'login_btn'>Login</li>
+            <li>SignUp</li>
+        </ul>
+    </li>
+</div>
+<script>
+    document.getElementById('login_btn').addEventListener('click',function(){
+    alert();
+});
+</script>
+                            
+
+<style>
+    #e5-modal-window {
+        display:none;
+        position:absolute;
+        width:100px;
+        height:100px;
+        top: calc(50% - 50px);
+        left: calc(50% - 50px);
+        border:2px solid Black;
+        background-color:White;
+    }
+</style>
+<div style='position:relative'>
+    <div style='position:relative; width:50%; height:400px; background-color:Cyan;'>
+        <div style='position:absolute; top:100px'>
+            Let's not become weary in doing good,<br>
+            for at the proper time we will see a great outcome<br>
+            if we do not give up.<br><br>
+            <button id = 'login_btn'>Login</button>
+        </div>
+    </div>
+    <div id='e5-modal-window'>
+        <h1 style="text-align:center">Login</h1>
+        <br>
+        <button id ='cancel_btn'>Cancel</button>
+    </div>
+</div>
+<script>
+    document.getElementById('login_btn').addEventListener('click',function(){
+    document.getElementById('e5-modal-window').style.display = 'block';
+});
+
+document.getElementById('cancel_btn').addEventListener('click',function(){
+    document.getElementById('e5-modal-window').style.display = 'none';
+});
+</script>
+                            

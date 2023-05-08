@@ -1,0 +1,134 @@
+let obj = document.getElementById('e1-content-left');
+let content_h = window.getComputedStyle(obj).height; 
+//alert(content_h);
+let vertical_center = 'calc((100% - ' + content_h + ')/2)';
+obj.style.position = 'absolute';
+obj.style.top = vertical_center;
+
+
+<style>
+    #e1-layout-left {
+        position:relative;
+        width:50%; height:400px;
+        background-color:Cyan;
+    }
+</style>
+<div id='e1-layout-left'>
+    <div id='e1-content-left' style='width:90%; background-color:LightGrey'>
+        Let's not become weary in doing good,<br>
+        for at the proper time we will see a great outcome<br>
+        if we do not give up.
+    </div>
+</div>
+<script>
+   let obj = document.getElementById('e1-content-left');
+let obj2 = document.getElementById('e1-content-left');
+let content_h = window.getComputedStyle(obj).height;
+let content_w = window.getComputedStyle(obj2).width; 
+//alert(content_h);
+let vertical_center = 'calc((100% - ' + content_h + ')/2)';
+let h_center = 'calc((100% - ' + content_w + ')/2)';
+obj.style.position = 'absolute';
+obj.style.top = vertical_center;
+obj.style.left = h_center;
+</script>
+                            
+
+
+
+
+
+<style>
+    #e2-blanket {
+        display:none;
+        position:absolute;
+        top: 0;
+        left:0;
+        height:100%;
+        width:100%;
+        background-color:Grey;
+        z-index: 1;
+        opacity: 0.9;
+    }
+</style>
+<div style='position:relative'>
+    <div style='position:relative; width:50%; height:400px; background-color:Cyan;'>
+        <div style='position:absolute; top:100px'>
+            Let's not become weary in doing good,<br>
+            for at the proper time we will see a great outcome<br>
+            if we do not give up.<br><br>
+            <button id='e2-signup'>Sign up</button>
+        </div>
+    </div>
+    <div id='e2-blanket'>
+    </div>
+</div>
+<script>
+    document.getElementById('e2-signup').addEventListener('click', function(){
+      document.getElementById('e2-blanket').style.display = 'block';
+
+})
+
+document.getElementById('e2-blanket').addEventListener('click', function(){
+      document.getElementById('e2-blanket').style.display = 'none';
+
+})
+</script>
+
+
+
+<style>
+    #e3-signup-modal-window {
+        display: none;
+        position:absolute;
+        width:300px;
+        height:200px;
+        left: calc(50% - 150px);
+        top: calc(50% - 100px);
+        border:2px solid Black;
+        background-color:White;
+    }
+</style>
+<div style='position:relative'>
+    <div style='position:relative; width:50%; height:400px; background-color:Cyan;'>
+        <div style='position:absolute; top:100px'>
+            Let's not become weary in doing good,<br>
+            for at the proper time we will see a great outcome<br>
+            if we do not give up.<br><br>
+            <button id='e3-signup'>Sign up</button>
+        </div>
+    </div>
+    <div id='e3-signup-modal-window'>
+        <h1 style="text-align:center">Sign Up</h1>
+    </div>
+</div>
+<script>
+    document.getElementById('e3-signup').addEventListener('click', function(){
+      document.getElementById('e3-signup-modal-window').style.display = 'block';
+
+})
+</script>
+                            
+
+
+
+<form method = 'post' action = 'w4_controller_1234.php'>
+    <input type='hidden' name='page' value='start_page'>
+    <input type='hidden' name='page' value='login'>
+    Username:
+    <input type='text' name='username' required><br>
+    Password:
+    <input type='password' name='password' required><br>
+    <button type ='reset'>reset</button>  <!-- Reset button -->
+    <button id = 'cancel_btn' type = 'button'>cancel</button>  <!-- Cancel -->
+    <button type ='submit'>submit</button> <!-- Submit button -->
+</form>
+<script>
+document.getElementById('cancel_btn').addEventListener('click', function(){
+      alert(cancelled);
+
+//use input for button not button tag
+
+})   
+</script>                  
+                            
